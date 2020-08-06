@@ -51,7 +51,7 @@ class Alumnos extends Component {
    const data = { noControl:this.frmNoControl.value, nombre:this.frmNombre.value,  grupo:this.frmGrupo.value,  turno:this.frmTurno.value}
 
     if(!this.state.edit) {
-        const url ='http://localhost:4000/api/alumnos';
+        const url ='https://loopback-juancarlos.us-south.cf.appdomain.cloud/api/alumnos';
        
        axios.post(url, data)
             .then(res => console.log(res.data));
@@ -69,7 +69,7 @@ class Alumnos extends Component {
     }
     else {
 
-        const url ='http://localhost:4000/api/alumnos/'+this.state.id;
+        const url ='https://loopback-juancarlos.us-south.cf.appdomain.cloud/api/alumnos/'+this.state.id;
 
         const data = { noControl:this.frmNoControl.value, nombre:this.frmNombre.value,  grupo:this.frmGrupo.value,  turno:this.frmTurno.value}
 
@@ -130,7 +130,7 @@ class Alumnos extends Component {
   deleteAlumno = (id) => event => {
     event.preventDefault();
 
-    const url ='http://localhost:4000/api/alumnos/'+id;
+    const url ='https://loopback-juancarlos.us-south.cf.appdomain.cloud/api/alumnos/'+id;
    
     axios.delete(url)
         .then(res => console.log(res.data));
@@ -144,7 +144,7 @@ class Alumnos extends Component {
 
     loadAlumno() {
 
-        axios.get('http://localhost:4000/api/alumnos')
+        axios.get('https://loopback-juancarlos.us-south.cf.appdomain.cloud/api/alumnos')
         .then(res => {
 
             this.setState({ alumnos1: res.data});

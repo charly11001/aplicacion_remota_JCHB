@@ -44,7 +44,7 @@ class Carreras extends Component {
    const data = { nombre:this.frmNombre.value}
 
     if(!this.state.edit) {
-        const url ='http://localhost:4000/api/carreras';
+        const url ='https://loopback-juancarlos.us-south.cf.appdomain.cloud/api/carreras';
        
        axios.post(url, data)
             .then(res => console.log(res.data));
@@ -58,7 +58,7 @@ class Carreras extends Component {
     }
     else {
 
-        const url ='http://localhost:4000/api/carreras/'+this.state.id;
+        const url ='https://loopback-juancarlos.us-south.cf.appdomain.cloud/api/carreras/'+this.state.id;
 
         const data = { nombre:this.frmNombre.value }
 
@@ -110,7 +110,7 @@ class Carreras extends Component {
   deleteCarrera = (id) => event => {
     event.preventDefault();
 
-    const url ='http://localhost:4000/api/carreras/'+id;
+    const url ='https://loopback-juancarlos.us-south.cf.appdomain.cloud/api/carreras/'+id;
    
     axios.delete(url)
         .then(res => console.log(res.data));
@@ -124,7 +124,7 @@ class Carreras extends Component {
 
     loadCarrera() {
 
-        axios.get('http://localhost:4000/api/carreras')
+        axios.get('https://loopback-juancarlos.us-south.cf.appdomain.cloud/api/carreras')
         .then(res => {
 
             this.setState({ carreras1: res.data});
